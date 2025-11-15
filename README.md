@@ -649,8 +649,8 @@
             <p class="hero-text">
               Hi, I’m <strong>Rei Tsukumo (津雲 玲)</strong> — an anime-based digital artist
               drawing characters of all genders and ages (for SFW pieces), and offering NSFW
-              artwork for adults (18+ only). Icons, illustrations, and more, with expressive,
-              detailed anime vibes.
+              artwork for adults (18+ only). I can draw from OC's to characters you love (and
+              of course, anything in between)!
             </p>
             <div class="hero-buttons">
               <a href="#commissions" class="btn btn-primary">View Prices</a>
