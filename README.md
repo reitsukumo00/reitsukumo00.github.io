@@ -667,7 +667,6 @@
           <div class="hero-art-preview">
             <div class="hero-card">
               <div class="hero-pfp">玲</div>
-              <div class="hero-username">@rei_tsukumo00</div>
               <div class="hero-status">
               </div>
               <div class="floating-chip chip-1">✨ SFW &amp; NSFW (18+)</div>
