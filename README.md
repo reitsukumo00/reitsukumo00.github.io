@@ -738,7 +738,7 @@
           <p class="section-subtitle">
             Base prices in <strong>USD</strong>. Final quotes may change for complexity, backgrounds,
             multiple characters, or specific NSFW content (18+ only). Furry drawings and/or drawings with 
-            another person(s) will be charged more depending on the compexity.
+            another person(s) will be charged more than, if not double, the og price.
           </p>
 
           <div class="commission-layout">
