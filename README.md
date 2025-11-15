@@ -5,8 +5,8 @@
   <title>Rei Tsukumo Art Commissions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Cute Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Cute Google Font: QUICKSAND -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -21,837 +21,292 @@
       --radius-small: 1rem;
     }
 
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: "Quicksand", sans-serif;
+      background: radial-gradient(circle at top left, #ffeaf5 0, #ffd8f2 35%, #ffc2e4 70%, #ffb0da 100%);
+      color: var(--text-main);
       margin: 0;
       padding: 0;
     }
 
-    body {
-      font-family: "Fredoka", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top left, #ffeaf5 0, #ffd8f2 35%, #ffc2e4 70%, #ffb0da 100%);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ---------- Layout ---------- */
-
-    .page-wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 1.25rem;
-      margin-bottom: 1.5rem;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      border-radius: 999px;
-      box-shadow: var(--shadow-soft);
-      position: sticky;
-      top: 0.75rem;
-      z-index: 10;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
-
-    .logo-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--pink-main), var(--pink-hot));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 1.2rem;
-      box-shadow: 0 0 0 3px #ffe9f7;
-    }
-
-    nav {
-      display: flex;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-link {
-      padding: 0.4rem 0.85rem;
-      border-radius: 999px;
-      background: transparent;
-      transition: background 0.2s, transform 0.1s;
-      cursor: pointer;
-    }
-
-    .nav-link:hover {
-      background: rgba(255, 182, 217, 0.6);
-      transform: translateY(-1px);
-    }
-
-    .nav-link.primary {
+    /* Floating BACK TO TOP button */
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
       background: var(--pink-hot);
-      color: var(--white);
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
       box-shadow: var(--shadow-soft);
+      z-index: 999;
+      display: none;
+      transition: transform .2s;
     }
 
-    .nav-link.primary:hover {
+    #topBtn:hover {
+      transform: translateY(-4px) scale(1.05);
       background: var(--pink-deep);
     }
 
-    main {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      margin-top: 1rem;
+    /* --- EXISTING STYLES (FROM PREVIOUS VERSION) --- */
+    .page-wrapper { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: .75rem 1.25rem; margin-bottom: 1.5rem;
+      background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
+      border-radius: 999px; box-shadow: var(--shadow-soft);
+      position: sticky; top: 0.75rem; z-index: 10;
     }
+    .logo { display: flex; align-items: center; gap: .5rem; font-weight: 600; font-size: 1.2rem; }
+    .logo-badge {
+      width: 32px; height: 32px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink-main), var(--pink-hot));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); box-shadow: 0 0 0 3px #ffe9f7;
+    }
+    nav { display: flex; gap: .5rem; font-size: .95rem; }
+    .nav-link { padding: .4rem .85rem; border-radius: 999px; cursor: pointer; }
+    .nav-link:hover { background: rgba(255,182,217,0.6); }
+    .nav-link.primary { background: var(--pink-hot); color: white; }
+
+    main { display: flex; flex-direction: column; gap: 2.5rem; }
 
     section {
-      border-radius: var(--radius-big);
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255,255,255,0.85);
       padding: 1.75rem 1.5rem;
+      border-radius: var(--radius-big);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
-    }
-
-    section::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 182, 217, 0.55), transparent 70%);
-      top: -70px;
-      right: -60px;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    section::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.85), transparent 70%);
-      bottom: -70px;
-      left: -40px;
-      opacity: 0.6;
-      pointer-events: none;
-    }
-
-    .section-inner {
-      position: relative;
-      z-index: 1;
     }
 
     .section-title {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 1.7rem;
+      margin-bottom: .5rem;
+      display: flex; align-items: center; gap: .5rem;
     }
 
-    .section-subtitle {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      margin-bottom: 1rem;
-    }
-
-    /* ---------- Hero ---------- */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.75rem;
-      align-items: center;
-    }
-
-    .hero-title {
-      font-size: 2.1rem;
-      line-height: 1.15;
-      margin-bottom: 0.75rem;
-    }
-
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; }
     .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.3rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      background: rgba(255, 255, 255, 0.9);
-      margin-bottom: 0.7rem;
-      box-shadow: 0 6px 14px rgba(255, 182, 217, 0.8);
+      background: rgba(255,255,255,0.9); padding: .4rem .9rem;
+      border-radius: 999px; font-size: .85rem;
+      margin-bottom: .7rem; box-shadow: var(--shadow-soft);
     }
 
-    .hero-text {
-      font-size: 0.98rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
+    .hero-title { font-size: 2.3rem; }
+    .hero-text { font-size: 1rem; }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 0.55rem 1.25rem;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
-      white-space: nowrap;
+      display: inline-flex; padding: .6rem 1.3rem;
+      border: none; border-radius: 999px;
+      cursor: pointer; font-size: 1rem;
+      transition: transform .15s;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--pink-hot), var(--pink-deep));
-      color: var(--white);
-      box-shadow: var(--shadow-soft);
-    }
+    .btn-primary { background: var(--pink-deep); color: white; }
+    .btn-primary:hover { transform: translateY(-3px); }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(242, 90, 146, 0.6);
-    }
+    .btn-ghost { border: 2px dashed var(--pink-main); background: white; }
+    .btn-ghost:hover { background: var(--pink-light); }
 
-    .btn-ghost {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px dashed var(--pink-hot);
-    }
-
-    .btn-ghost:hover {
-      background: var(--pink-main);
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.7rem;
-      font-size: 0.8rem;
-    }
-
-    .tag {
-      padding: 0.2rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(255, 111, 169, 0.2);
-    }
-
-    .hero-art-preview {
-      position: relative;
-      width: 100%;
-      min-height: 230px;
-    }
-
-    .hero-card {
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius-big);
-      background: linear-gradient(145deg, #ffe6f2, #ffbfdc);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      text-align: center;
-      padding: 1.5rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero-pfp {
-      width: 120px;
-      height: 120px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #fff, #ffc1dd 60%, #ff9bc8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.6rem;
-      box-shadow: 0 0 0 5px #ffe9f7;
-    }
-
-    .hero-username {
-      font-weight: 600;
-    }
-
-    .hero-status {
-      font-size: 0.8rem;
-      padding: 0.15rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(255, 111, 169, 0.35);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .floating-chip {
-      position: absolute;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      background: var(--white);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .chip-1 {
-      top: 12px;
-      left: -5px;
-    }
-
-    .chip-2 {
-      bottom: 18px;
-      right: -2px;
-    }
-
-    /* ---------- Socials strip ---------- */
-
-    .social-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      align-items: center;
-      justify-content: center;
-      padding: 0.7rem 1rem;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 999px;
-      box-shadow: var(--shadow-soft);
-      margin: -0.75rem auto 0;
-      max-width: 720px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .social-label {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .social-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.9rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      background: var(--pink-main);
-      color: var(--text-main);
-      cursor: pointer;
-      transition: transform 0.1s, box-shadow 0.1s;
-    }
-
-    .social-pill:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-soft);
-    }
-
-    /* ---------- Gallery ---------- */
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 1rem; }
 
     .art-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-small);
       background: var(--pink-light);
-      box-shadow: 0 6px 16px rgba(255, 167, 211, 0.6);
-      cursor: pointer;
+      border-radius: var(--radius-small);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
     }
-
-    .art-card img {
-      display: block;
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      transition: transform 0.25s;
-    }
-
-    .art-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .art-label {
-      position: absolute;
-      left: 0.5rem;
-      bottom: 0.5rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(255, 111, 169, 0.35);
-    }
-
-    .gallery-note {
-      font-size: 0.85rem;
-      margin-top: 0.75rem;
-      opacity: 0.85;
-    }
-
-    /* ---------- Commissions ---------- */
 
     .commission-layout {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1rem;
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1rem;
     }
 
-    .commission-card {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: var(--radius-small);
-      padding: 1rem;
-      box-shadow: 0 6px 16px rgba(255, 167, 211, 0.5);
-      border: 1px solid rgba(255, 111, 169, 0.25);
-      font-size: 0.9rem;
+    /* CONTACT FORM */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact-card { background: white; padding: 1rem; border-radius: 1rem; box-shadow: var(--shadow-soft); }
+
+    select, input, textarea {
+      width: 100%; padding: .6rem; border-radius: .8rem;
+      border: 1px solid var(--pink-main); font-family: "Quicksand"; font-size: .9rem;
     }
 
-    .commission-name {
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .commission-list {
-      list-style: none;
-      margin-top: 0.4rem;
-    }
-
-    .commission-list li {
-      margin-bottom: 0.25rem;
-    }
-
-    .commission-list strong {
-      display: inline-block;
-      min-width: 90px;
-    }
-
-    .tos-list {
-      margin-top: 1.1rem;
-      font-size: 0.88rem;
-      padding-left: 1.1rem;
-    }
-
-    .tos-list li {
-      margin-bottom: 0.35rem;
-    }
-
-    /* ---------- About / Contact ---------- */
-
-    .about-text {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .about-highlight {
-      display: inline-block;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      background: var(--pink-main);
-      margin: 0 0.15rem;
-      font-size: 0.85rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 1.25rem;
-      margin-top: 1rem;
-    }
-
-    .contact-info {
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .contact-info ul {
-      margin-top: 0.4rem;
-      padding-left: 1.1rem;
-      font-size: 0.88rem;
-    }
-
-    .contact-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: var(--radius-small);
-      padding: 1rem;
-      box-shadow: 0 6px 16px rgba(255, 167, 211, 0.5);
-      border: 1px solid rgba(255, 111, 169, 0.25);
-      font-size: 0.9rem;
-    }
-
-    .contact-row {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 0.8rem;
-    }
-
-    label {
-      font-size: 0.8rem;
-      opacity: 0.9;
-    }
-
-    input,
-    textarea {
-      border-radius: 0.9rem;
-      border: 1px solid rgba(255, 111, 169, 0.4);
-      padding: 0.45rem 0.75rem;
-      font-family: inherit;
-      font-size: 0.88rem;
+    select:focus, input:focus, textarea:focus {
+      border-color: var(--pink-hot);
+      box-shadow: 0 0 0 3px rgba(255,165,210,0.4);
       outline: none;
-      background: #fff;
     }
 
-    input:focus,
-    textarea:focus {
-      border-color: var(--pink-deep);
-      box-shadow: 0 0 0 3px rgba(255, 147, 196, 0.35);
-    }
+    footer { text-align: center; padding: 2rem; opacity: 0.7; }
 
-    textarea {
-      resize: vertical;
-      min-height: 90px;
-    }
-
-    .contact-hint {
-      font-size: 0.75rem;
-      opacity: 0.8;
-    }
-
-    footer {
-      margin-top: auto;
-      text-align: center;
-      padding: 1.5rem 0.5rem 2rem;
-      font-size: 0.75rem;
-      opacity: 0.8;
-    }
-
-    /* ---------- Responsive ---------- */
-
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-title {
-        font-size: 1.7rem;
-      }
-
-      section {
-        padding: 1.4rem 1.1rem;
-      }
-
-      .page-wrapper {
-        padding-inline: 0.75rem;
-      }
+    @media(max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
-  <div class="page-wrapper">
-    <!-- Header / Nav -->
-    <header>
-      <div class="logo">
-        <div class="logo-badge">✿</div>
-        <span>Rei Tsukumo Art</span>
+
+<!-- FLOATING TOP BUTTON -->
+<button onclick="scrollToTop()" id="topBtn">↑</button>
+
+<script>
+  window.onscroll = function() {
+    document.getElementById("topBtn").style.display =
+      (document.documentElement.scrollTop > 200) ? "block" : "none";
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <div class="logo-badge">✿</div>
+      <span>Rei Tsukumo Art</span>
+    </div>
+    <nav>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#commissions" class="nav-link">Commissions</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link primary">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero">
+      <div>
+        <div class="hero-pill">💕 Commissions OPEN! (˶˃ ᵕ ˂˶)♡</div>
+        <h1 class="hero-title">Anime & NSFW (18+) Art Commissions</h1>
+        <p class="hero-text">
+          Hi, I’m <strong>Rei Tsukumo (津雲 玲)</strong> — an anime-based digital artist offering
+          SFW and NSFW (18+) commissions for all genders and character types.
+        </p>
+        <button class="btn btn-primary" onclick="location.href='#commissions'">View Prices</button>
+        <button class="btn btn-ghost" onclick="location.href='#gallery'">See My Art</button>
       </div>
-      <nav>
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#gallery" class="nav-link">Gallery</a>
-        <a href="#commissions" class="nav-link">Commissions</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link primary">Contact</a>
-      </nav>
-    </header>
+      <div></div>
+    </div>
+  </section>
 
-    <main>
-      <!-- HERO / HOME -->
-      <section id="home">
-        <div class="section-inner hero">
-          <div>
-            <div class="hero-pill">
-              <span>💕</span>
-              <span>Commissions currently <strong>OPEN</strong></span>
-            </div>
-            <h1 class="hero-title">Anime &amp; NSFW (18+) Art Commissions</h1>
-            <p class="hero-text">
-              Hi, I’m <strong>Rei Tsukumo (津雲 玲)</strong> — I draw anime-style characters
-              of all genders and ages for SFW pieces, and I also offer NSFW artwork for
-              adults (18+ only). Icons, illustrations, and more, all with a soft, expressive,
-              anime-based feel.
-            </p>
-            <div class="hero-buttons">
-              <a href="#commissions" class="btn btn-primary">View Prices</a>
-              <a href="#gallery" class="btn btn-ghost">See My Art</a>
-            </div>
-            <div class="hero-tags">
-              <span class="tag">Anime Style</span>
-              <span class="tag">SFW &amp; NSFW (18+)</span>
-              <span class="tag">OCs &amp; Fanart</span>
-              <span class="tag">Any Gender</span>
-            </div>
-          </div>
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2 class="section-title">Gallery 🎨 (๑˃ᴗ˂)ﻭ</h2>
+    <p>SFW sample artwork shown here. Replace images once uploaded.</p>
 
-          <div class="hero-art-preview">
-            <div class="hero-card">
-              <div class="hero-pfp">玲</div>
-              <div class="hero-username">@rei_tsukumo00</div>
-              <div class="hero-status">
-                <span>🧁</span>
-                <span>Anime-based digital artist</span>
-              </div>
-              <div class="floating-chip chip-1">✨ SFW &amp; NSFW (18+)</div>
-              <div class="floating-chip chip-2">🎀 Detailed character art</div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div class="gallery-grid">
+      <div class="art-card"><img src="images/sample1.png"></div>
+      <div class="art-card"><img src="images/sample2.png"></div>
+      <div class="art-card"><img src="images/sample3.png"></div>
+      <div class="art-card"><img src="images/sample4.png"></div>
+    </div>
+  </section>
 
-      <!-- SOCIAL STRIP -->
-      <div class="social-strip">
-        <span class="social-label">Find me here:</span>
-        <div class="social-links">
-          <a href="https://www.instagram.com/rei_tsukumo00/" target="_blank" class="social-pill">
-            <span>📸</span><span>Instagram</span>
-          </a>
-          <a href="https://x.com/rei_tsukumo00" target="_blank" class="social-pill">
-            <span>🐦</span><span>X (Twitter)</span>
-          </a>
-          <a href="https://www.tiktok.com/@rei_tsukumo00" target="_blank" class="social-pill">
-            <span>🎵</span><span>TikTok</span>
-          </a>
-          <a href="https://www.patreon.com/c/rei_tsukumo00?fromConcierge=true&redirect=true" target="_blank" class="social-pill">
-            <span>🩷</span><span>Patreon</span>
-          </a>
-        </div>
+  <!-- COMMISSIONS -->
+  <section id="commissions">
+    <h2 class="section-title">Commission Prices 🧾 (ᵔᴥᵔ)</h2>
+
+    <div class="commission-layout">
+
+      <div class="commission-card">
+        <h3>🖊️ Line Art</h3>
+        <p><strong>Head:</strong> $5+</p>
+        <p><strong>Bust:</strong> $6+</p>
+        <p><strong>Waist:</strong> $10+</p>
+        <p><strong>Knees:</strong> $12+</p>
+        <p><strong>Full Body:</strong> $15+</p>
       </div>
 
-      <!-- GALLERY -->
-      <section id="gallery">
-        <div class="section-inner">
-          <h2 class="section-title">Gallery <span>🎨</span></h2>
-          <p class="section-subtitle">
-            A preview of my work (SFW examples). Replace these placeholders with your actual art pieces.
-          </p>
-          <div class="gallery-grid">
-            <!-- Replace src with your own image paths -->
-            <div class="art-card">
-              <img src="images/sample1.png" alt="Sample artwork 1" />
-              <div class="art-label">Anime Portrait</div>
-            </div>
-            <div class="art-card">
-              <img src="images/sample2.png" alt="Sample artwork 2" />
-              <div class="art-label">Full-Body Character</div>
-            </div>
-            <div class="art-card">
-              <img src="images/sample3.png" alt="Sample artwork 3" />
-              <div class="art-label">Dynamic Pose</div>
-            </div>
-            <div class="art-card">
-              <img src="images/sample4.png" alt="Sample artwork 4" />
-              <div class="art-label">Detailed Outfit</div>
-            </div>
-          </div>
-          <p class="gallery-note">
-            ✧ Create an <code>images</code> folder in your repo, upload your art
-            (e.g., <code>icon1.png</code>, <code>fullbody1.png</code>), and update the
-            <code>src=""</code> paths above to match your filenames.
-          </p>
-        </div>
-      </section>
+      <div class="commission-card">
+        <h3>🎨 Colored + Rendered</h3>
+        <p><strong>Head:</strong> $10+</p>
+        <p><strong>Bust:</strong> $12+</p>
+        <p><strong>Waist:</strong> $15+</p>
+        <p><strong>Knees:</strong> $20+</p>
+        <p><strong>Full Body:</strong> $26+</p>
+      </div>
 
-      <!-- COMMISSIONS -->
-      <section id="commissions">
-        <div class="section-inner">
-          <h2 class="section-title">Commissions &amp; Pricing <span>🧾</span></h2>
-          <p class="section-subtitle">
-            Prices are base estimates in <strong>USD</strong>. Final quote may change
-            depending on complexity, background, and content (SFW / NSFW for 18+).
-          </p>
+    </div>
+  </section>
 
-          <div class="commission-layout">
-            <!-- LINEART -->
-            <div class="commission-card">
-              <div class="commission-name">Line Art <span>🖊️</span></div>
-              <p>Clean linework only, no color.</p>
-              <ul class="commission-list">
-                <li><strong>Head:</strong> $5+</li>
-                <li><strong>Bust:</strong> $6+</li>
-                <li><strong>Waist:</strong> $10+</li>
-                <li><strong>Knees:</strong> $12+</li>
-                <li><strong>Full Body:</strong> $15+</li>
-              </ul>
-            </div>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">About Rei 🍰 (˶ᵔ ᵕ ᵔ˶)</h2>
+    <p>I am Rei, a soft, expressive anime-based artist who loves drawing OCs and fanart for clients worldwide.</p>
+  </section>
 
-            <!-- COLORED -->
-            <div class="commission-card">
-              <div class="commission-name">Colored + Rendered <span>🎨</span></div>
-              <p>Flat color plus rendering and details.</p>
-              <ul class="commission-list">
-                <li><strong>Head:</strong> $10+</li>
-                <li><strong>Bust:</strong> $12+</li>
-                <li><strong>Waist:</strong> $15+</li>
-                <li><strong>Knees:</strong> $20+</li>
-                <li><strong>Full Body:</strong> $26+</li>
-              </ul>
-            </div>
-          </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Contact Form 📮 (๑˃ᴗ˂)ﻭ</h2>
+    <p>Choose your preferred contact method and enter your username.</p>
 
-          <ul class="tos-list">
-            <li>I draw anime-style characters of any gender. SFW art can include characters of any age; NSFW commissions are strictly for adults (18+) and adult characters only.</li>
-            <li>NSFW, suggestive, and more mature themes are available for 18+ clients. Please be clear about what you want so I can confirm if it’s okay.</li>
-            <li>Prices may increase with complex designs, armor, detailed backgrounds, or multiple characters.</li>
-            <li>Personal use only by default (icons, headers, prints). For commercial use, please ask for a custom quote.</li>
-            <li>Payment via PayPal or other agreed method after sketch approval.</li>
-            <li>I may post finished artwork on my portfolio and socials (unless we agree otherwise).</li>
-          </ul>
-        </div>
-      </section>
+    <div class="contact-grid">
 
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="section-inner">
-          <h2 class="section-title">About Rei <span>🍰</span></h2>
-          <p class="about-text">
-            Hello! I’m <span class="about-highlight">Rei Tsukumo (津雲 玲)</span>, an
-            anime-based digital artist. I love drawing expressive characters of all
-            genders, from cute and soft to darker, more mature vibes.
-          </p>
-          <br />
-          <p class="about-text">
-            I work in a flexible anime-inspired style and accept both SFW and NSFW
-            requests for adult clients. Whether it’s your OC, fanart, or a specific
-            idea you’ve been thinking about for a long time, I want to bring it to life
-            with attention to emotion, posing, and detail.
-          </p>
-          <br />
-          <p class="about-text">
-            If you’d like to support me beyond commissions, you can also check out my
-            <span class="about-highlight">Patreon</span> for extra content and future rewards.
-          </p>
-        </div>
-      </section>
+      <div>
+        <p>Please include:</p>
+        <ul>
+          <li>Commission type (lineart/colored)</li>
+          <li>SFW or NSFW (18+)</li>
+          <li>References</li>
+          <li>Your preferred contact</li>
+        </ul>
+      </div>
 
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="section-inner">
-          <h2 class="section-title">Contact &amp; Order Form <span>📮</span></h2>
-          <p class="section-subtitle">
-            Ready to commission me? Please send a message using the form below or DM me
-            on any of my socials with your idea and references.
-          </p>
+      <div class="contact-card">
+        <form action="mailto:reitsukumo00@gmail.com" method="post" enctype="text/plain">
 
-          <div class="contact-grid">
-            <div class="contact-info">
-              <p>When you request a commission, please include:</p>
-              <ul>
-                <li>Type of commission (lineart / colored, head / bust / waist / knees / full body)</li>
-                <li>SFW or NSFW (18+ only) and the general idea</li>
-                <li>Character references (images, moodboards, or detailed description)</li>
-                <li>Preferred mood (cute, dark, elegant, etc.)</li>
-                <li>Deadline (if any) and your budget</li>
-              </ul>
-              <br />
-              <p>
-                You can also email me directly at:
-                <strong>reitsukumo00@gmail.com</strong> ✧
-              </p>
-            </div>
+          <label>Preferred Contact Method:</label>
+          <select name="Preferred Contact">
+            <option value="Discord">Discord</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Twitter / X">Twitter / X</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Email">Email</option>
+          </select>
 
-            <div class="contact-card">
-              <!-- Basic mailto form (opens email client, not a backend) -->
-              <form action="mailto:reitsukumo00@gmail.com" method="post" enctype="text/plain">
-                <div class="contact-row">
-                  <label for="name">Name / Username</label>
-                  <input id="name" name="Name" type="text" placeholder="Your name or @handle" required />
-                </div>
+          <br><br>
 
-                <div class="contact-row">
-                  <label for="email">Email</label>
-                  <input id="email" name="Email" type="email" placeholder="you@example.com" required />
-                </div>
+          <label>Their Username / ID:</label>
+          <input name="User ID" placeholder="Enter your @username, Discord tag, etc." required>
 
-                <div class="contact-row">
-                  <label for="type">Commission Type</label>
-                  <input id="type" name="Type" type="text" placeholder="Example: Colored, waist up, SFW/NSFW (18+)" />
-                </div>
+          <br><br>
 
-                <div class="contact-row">
-                  <label for="details">Details &amp; References</label>
-                  <textarea id="details" name="Details" placeholder="Tell me about your character, pose, mood, and add links to references."></textarea>
-                  <p class="contact-hint">
-                    You can paste links to reference images here (Drive, Instagram, etc.).
-                  </p>
-                </div>
+          <label>Commission Type:</label>
+          <input name="Type" placeholder="Example: Colored waist-up SFW">
 
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                  Send Commission Request 💌
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+          <br><br>
 
-    <footer>
-      © <span id="year"></span> Rei Tsukumo · Made with lots of ♡ and pink.
-    </footer>
-  </div>
+          <label>Details:</label>
+          <textarea name="Details" placeholder="Describe your character, pose, and references."></textarea>
 
-  <script>
-    // Auto-update year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+          <br>
+          <button class="btn btn-primary" type="submit" style="width:100%;">Send Request 💌</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © <span id="year"></span> Rei Tsukumo — All rights reserved ♡
+</footer>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
+
 </body>
 </html>
