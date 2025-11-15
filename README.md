@@ -667,7 +667,7 @@
           <div class="hero-art-preview">
             <div class="hero-card">
               <div class="hero-pfp">
-  <img src="images/yourimage.png" alt="Rei Avatar" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+  <img src="images/Rei_Tsukumo_pfp_2.jpg" alt="Rei Tsukumo Icon">
 </div>
               <div class="hero-status">
               </div>
