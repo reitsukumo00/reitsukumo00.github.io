@@ -1,3 +1,8 @@
+h1.project-title,
+.site-header,
+.site-title {
+  display: none !important;
+}
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
