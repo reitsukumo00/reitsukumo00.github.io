@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Art Commissions | Your Name</title>
+  <title>Rei Tsukumo Art Commissions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Cute Google Font -->
@@ -292,7 +292,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3rem;
+      font-size: 2.6rem;
       box-shadow: 0 0 0 5px #ffe9f7;
     }
 
@@ -343,7 +343,7 @@
       border-radius: 999px;
       box-shadow: var(--shadow-soft);
       margin: -0.75rem auto 0;
-      max-width: 640px;
+      max-width: 720px;
       position: relative;
       z-index: 2;
     }
@@ -426,10 +426,10 @@
 
     /* ---------- Commissions ---------- */
 
-    .commission-grid {
+    .commission-layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
       margin-top: 1rem;
     }
 
@@ -439,35 +439,33 @@
       padding: 1rem;
       box-shadow: 0 6px 16px rgba(255, 167, 211, 0.5);
       border: 1px solid rgba(255, 111, 169, 0.25);
+      font-size: 0.9rem;
     }
 
     .commission-name {
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
       display: flex;
       align-items: center;
       gap: 0.3rem;
     }
 
-    .commission-price {
-      font-size: 0.95rem;
-      color: var(--pink-deep);
-      margin-bottom: 0.4rem;
+    .commission-list {
+      list-style: none;
+      margin-top: 0.4rem;
     }
 
-    .commission-detail {
-      font-size: 0.82rem;
-      opacity: 0.9;
-      margin-bottom: 0.4rem;
+    .commission-list li {
+      margin-bottom: 0.25rem;
     }
 
-    .commission-extra {
-      font-size: 0.78rem;
-      opacity: 0.8;
+    .commission-list strong {
+      display: inline-block;
+      min-width: 90px;
     }
 
     .tos-list {
-      margin-top: 1rem;
+      margin-top: 1.1rem;
       font-size: 0.88rem;
       padding-left: 1.1rem;
     }
@@ -605,7 +603,7 @@
     <header>
       <div class="logo">
         <div class="logo-badge">✿</div>
-        <span>YourName Art</span>
+        <span>Rei Tsukumo Art</span>
       </div>
       <nav>
         <a href="#home" class="nav-link">Home</a>
@@ -625,34 +623,35 @@
               <span>💕</span>
               <span>Commissions currently <strong>OPEN</strong></span>
             </div>
-            <h1 class="hero-title">Cute &amp; Kawaii Art Commissions</h1>
+            <h1 class="hero-title">Anime &amp; NSFW (18+) Art Commissions</h1>
             <p class="hero-text">
-              Hi, I’m <strong>Your Name</strong> — I draw soft pastel, anime-inspired art,
-              perfect for icons, banners, and VTuber / OC illustrations. Check out my
-              portfolio and commission info below! ₊˚ʚ ♡ɞ˚₊
+              Hi, I’m <strong>Rei Tsukumo (津雲 玲)</strong> — I draw anime-style characters
+              of all genders and ages for SFW pieces, and I also offer NSFW artwork for
+              adults (18+ only). Icons, illustrations, and more, all with a soft, expressive,
+              anime-based feel.
             </p>
             <div class="hero-buttons">
               <a href="#commissions" class="btn btn-primary">View Prices</a>
               <a href="#gallery" class="btn btn-ghost">See My Art</a>
             </div>
             <div class="hero-tags">
-              <span class="tag">Chibi</span>
-              <span class="tag">Icons</span>
               <span class="tag">Anime Style</span>
-              <span class="tag">Pastel / Kawaii</span>
+              <span class="tag">SFW &amp; NSFW (18+)</span>
+              <span class="tag">OCs &amp; Fanart</span>
+              <span class="tag">Any Gender</span>
             </div>
           </div>
 
           <div class="hero-art-preview">
             <div class="hero-card">
-              <div class="hero-pfp">☆</div>
-              <div class="hero-username">@your_handle</div>
+              <div class="hero-pfp">玲</div>
+              <div class="hero-username">@rei_tsukumo00</div>
               <div class="hero-status">
                 <span>🧁</span>
-                <span>Soft pastel artist</span>
+                <span>Anime-based digital artist</span>
               </div>
-              <div class="floating-chip chip-1">✨ OC portraits</div>
-              <div class="floating-chip chip-2">🎀 Matching icons</div>
+              <div class="floating-chip chip-1">✨ SFW &amp; NSFW (18+)</div>
+              <div class="floating-chip chip-2">🎀 Detailed character art</div>
             </div>
           </div>
         </div>
@@ -662,18 +661,17 @@
       <div class="social-strip">
         <span class="social-label">Find me here:</span>
         <div class="social-links">
-          <!-- Replace # with your actual links -->
-          <a href="https://instagram.com/yourhandle" target="_blank" class="social-pill">
+          <a href="https://www.instagram.com/rei_tsukumo00/" target="_blank" class="social-pill">
             <span>📸</span><span>Instagram</span>
           </a>
-          <a href="https://twitter.com/yourhandle" target="_blank" class="social-pill">
-            <span>🐦</span><span>Twitter / X</span>
+          <a href="https://x.com/rei_tsukumo00" target="_blank" class="social-pill">
+            <span>🐦</span><span>X (Twitter)</span>
           </a>
-          <a href="https://www.tiktok.com/@yourhandle" target="_blank" class="social-pill">
+          <a href="https://www.tiktok.com/@rei_tsukumo00" target="_blank" class="social-pill">
             <span>🎵</span><span>TikTok</span>
           </a>
-          <a href="https://github.com/yourusername" target="_blank" class="social-pill">
-            <span>💾</span><span>GitHub</span>
+          <a href="https://www.patreon.com/c/rei_tsukumo00?fromConcierge=true&redirect=true" target="_blank" class="social-pill">
+            <span>🩷</span><span>Patreon</span>
           </a>
         </div>
       </div>
@@ -683,30 +681,31 @@
         <div class="section-inner">
           <h2 class="section-title">Gallery <span>🎨</span></h2>
           <p class="section-subtitle">
-            A small preview of my work. Replace these images with your actual art pieces.
+            A preview of my work (SFW examples). Replace these placeholders with your actual art pieces.
           </p>
           <div class="gallery-grid">
             <!-- Replace src with your own image paths -->
             <div class="art-card">
               <img src="images/sample1.png" alt="Sample artwork 1" />
-              <div class="art-label">OC Portrait</div>
+              <div class="art-label">Anime Portrait</div>
             </div>
             <div class="art-card">
               <img src="images/sample2.png" alt="Sample artwork 2" />
-              <div class="art-label">Chibi Fullbody</div>
+              <div class="art-label">Full-Body Character</div>
             </div>
             <div class="art-card">
               <img src="images/sample3.png" alt="Sample artwork 3" />
-              <div class="art-label">Icon Set</div>
+              <div class="art-label">Dynamic Pose</div>
             </div>
             <div class="art-card">
               <img src="images/sample4.png" alt="Sample artwork 4" />
-              <div class="art-label">Couple Illustration</div>
+              <div class="art-label">Detailed Outfit</div>
             </div>
           </div>
           <p class="gallery-note">
-            ✧ Tip: create an <code>images</code> folder in your repo, upload your art,
-            and update the <code>src=""</code> paths above to match your file names.
+            ✧ Create an <code>images</code> folder in your repo, upload your art
+            (e.g., <code>icon1.png</code>, <code>fullbody1.png</code>), and update the
+            <code>src=""</code> paths above to match your filenames.
           </p>
         </div>
       </section>
@@ -716,62 +715,45 @@
         <div class="section-inner">
           <h2 class="section-title">Commissions &amp; Pricing <span>🧾</span></h2>
           <p class="section-subtitle">
-            Prices are base estimates and may change depending on complexity. All prices
-            listed in <strong>USD</strong>. Please read the Terms of Service before ordering.
+            Prices are base estimates in <strong>USD</strong>. Final quote may change
+            depending on complexity, background, and content (SFW / NSFW for 18+).
           </p>
 
-          <div class="commission-grid">
+          <div class="commission-layout">
+            <!-- LINEART -->
             <div class="commission-card">
-              <div class="commission-name">Chibi <span>🍓</span></div>
-              <div class="commission-price">From $20</div>
-              <div class="commission-detail">
-                Cute, simplified full-body chibi. Perfect for profile pics or stickers.
-              </div>
-              <div class="commission-extra">
-                Includes: simple pastel background + soft shading.
-              </div>
+              <div class="commission-name">Line Art <span>🖊️</span></div>
+              <p>Clean linework only, no color.</p>
+              <ul class="commission-list">
+                <li><strong>Head:</strong> $5+</li>
+                <li><strong>Bust:</strong> $6+</li>
+                <li><strong>Waist:</strong> $10+</li>
+                <li><strong>Knees:</strong> $12+</li>
+                <li><strong>Full Body:</strong> $15+</li>
+              </ul>
             </div>
 
+            <!-- COLORED -->
             <div class="commission-card">
-              <div class="commission-name">Bust / Icon <span>🌸</span></div>
-              <div class="commission-price">From $25</div>
-              <div class="commission-detail">
-                Head &amp; shoulders illustration with your choice of expression.
-              </div>
-              <div class="commission-extra">
-                Includes: detailed eyes, simple props (stars, hearts, etc.).
-              </div>
-            </div>
-
-            <div class="commission-card">
-              <div class="commission-name">Half-Body <span>🩰</span></div>
-              <div class="commission-price">From $35</div>
-              <div class="commission-detail">
-                Half-body anime style. Great for banners and character sheets.
-              </div>
-              <div class="commission-extra">
-                Complex outfits may add an extra fee.
-              </div>
-            </div>
-
-            <div class="commission-card">
-              <div class="commission-name">Full-Body <span>💖</span></div>
-              <div class="commission-price">From $50</div>
-              <div class="commission-detail">
-                Full-body illustration with dynamic posing and pastel background.
-              </div>
-              <div class="commission-extra">
-                Extra characters: +50% base price each.
-              </div>
+              <div class="commission-name">Colored + Rendered <span>🎨</span></div>
+              <p>Flat color plus rendering and details.</p>
+              <ul class="commission-list">
+                <li><strong>Head:</strong> $10+</li>
+                <li><strong>Bust:</strong> $12+</li>
+                <li><strong>Waist:</strong> $15+</li>
+                <li><strong>Knees:</strong> $20+</li>
+                <li><strong>Full Body:</strong> $26+</li>
+              </ul>
             </div>
           </div>
 
           <ul class="tos-list">
-            <li>Personal use only (icons, headers, prints). Commercial use = please ask.</li>
-            <li>Payment via PayPal / [your method] after sketch approval.</li>
-            <li>No NFTs, AI training, hate content, or extremely NSFW work.</li>
-            <li>I keep the right to post finished artwork in my portfolio and socials.</li>
-            <li>Turnaround time: ~1–4 weeks depending on queue and complexity.</li>
+            <li>I draw anime-style characters of any gender. SFW art can include characters of any age; NSFW commissions are strictly for adults (18+) and adult characters only.</li>
+            <li>NSFW, suggestive, and more mature themes are available for 18+ clients. Please be clear about what you want so I can confirm if it’s okay.</li>
+            <li>Prices may increase with complex designs, armor, detailed backgrounds, or multiple characters.</li>
+            <li>Personal use only by default (icons, headers, prints). For commercial use, please ask for a custom quote.</li>
+            <li>Payment via PayPal or other agreed method after sketch approval.</li>
+            <li>I may post finished artwork on my portfolio and socials (unless we agree otherwise).</li>
           </ul>
         </div>
       </section>
@@ -779,19 +761,23 @@
       <!-- ABOUT -->
       <section id="about">
         <div class="section-inner">
-          <h2 class="section-title">About Me <span>🍰</span></h2>
+          <h2 class="section-title">About Rei <span>🍰</span></h2>
           <p class="about-text">
-            Hello! I’m <span class="about-highlight">Your Name</span>, a self-taught
-            digital artist who loves drawing pastel, anime-inspired characters. I’m
-            especially obsessed with <span class="about-highlight">soft pinks</span>,
-            sparkles, cozy vibes, and expressive faces. ♡
+            Hello! I’m <span class="about-highlight">Rei Tsukumo (津雲 玲)</span>, an
+            anime-based digital artist. I love drawing expressive characters of all
+            genders, from cute and soft to darker, more mature vibes.
           </p>
           <br />
           <p class="about-text">
-            When I’m not drawing, I’m probably scrolling through cute character designs,
-            studying, or working on original stories. My goal is to bring your OC,
-            persona, or favorite character to life in a way that feels warm, gentle, and
-            very, very <span class="about-highlight">kawaii</span>. ✧
+            I work in a flexible anime-inspired style and accept both SFW and NSFW
+            requests for adult clients. Whether it’s your OC, fanart, or a specific
+            idea you’ve been thinking about for a long time, I want to bring it to life
+            with attention to emotion, posing, and detail.
+          </p>
+          <br />
+          <p class="about-text">
+            If you’d like to support me beyond commissions, you can also check out my
+            <span class="about-highlight">Patreon</span> for extra content and future rewards.
           </p>
         </div>
       </section>
@@ -807,25 +793,24 @@
 
           <div class="contact-grid">
             <div class="contact-info">
-              <p>
-                To request a commission, please include:
-              </p>
+              <p>When you request a commission, please include:</p>
               <ul>
-                <li>Type of commission (chibi / bust / half-body / full-body)</li>
+                <li>Type of commission (lineart / colored, head / bust / waist / knees / full body)</li>
+                <li>SFW or NSFW (18+ only) and the general idea</li>
                 <li>Character references (images, moodboards, or detailed description)</li>
-                <li>Preferred vibe (soft, sparkly, dark, etc.)</li>
-                <li>Deadline (if any) and budget</li>
+                <li>Preferred mood (cute, dark, elegant, etc.)</li>
+                <li>Deadline (if any) and your budget</li>
               </ul>
               <br />
               <p>
                 You can also email me directly at:
-                <strong>youremail@example.com</strong> ✧
+                <strong>reitsukumo00@gmail.com</strong> ✧
               </p>
             </div>
 
             <div class="contact-card">
               <!-- Basic mailto form (opens email client, not a backend) -->
-              <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+              <form action="mailto:reitsukumo00@gmail.com" method="post" enctype="text/plain">
                 <div class="contact-row">
                   <label for="name">Name / Username</label>
                   <input id="name" name="Name" type="text" placeholder="Your name or @handle" required />
@@ -838,14 +823,14 @@
 
                 <div class="contact-row">
                   <label for="type">Commission Type</label>
-                  <input id="type" name="Type" type="text" placeholder="Chibi, bust, half-body, etc." />
+                  <input id="type" name="Type" type="text" placeholder="Example: Colored, waist up, SFW/NSFW (18+)" />
                 </div>
 
                 <div class="contact-row">
                   <label for="details">Details &amp; References</label>
-                  <textarea id="details" name="Details" placeholder="Tell me about your character, pose, vibe, etc."></textarea>
+                  <textarea id="details" name="Details" placeholder="Tell me about your character, pose, mood, and add links to references."></textarea>
                   <p class="contact-hint">
-                    You can paste links to reference images here (Instagram, Google Drive, etc.).
+                    You can paste links to reference images here (Drive, Instagram, etc.).
                   </p>
                 </div>
 
@@ -860,7 +845,7 @@
     </main>
 
     <footer>
-      © <span id="year"></span> Your Name · Made with lots of ♡ and pink.
+      © <span id="year"></span> Rei Tsukumo · Made with lots of ♡ and pink.
     </footer>
   </div>
 
@@ -870,4 +855,3 @@
   </script>
 </body>
 </html>
-
