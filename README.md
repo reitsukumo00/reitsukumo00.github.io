@@ -669,11 +669,8 @@
               <div class="hero-pfp">玲</div>
               <div class="hero-username">@rei_tsukumo00</div>
               <div class="hero-status">
-                <span>🧁</span>
-                <span>Anime-based digital artist</span>
               </div>
               <div class="floating-chip chip-1">✨ SFW &amp; NSFW (18+)</div>
-              <div class="floating-chip chip-2">🎀 Detailed character art</div>
             </div>
           </div>
         </div>
