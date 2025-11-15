@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -738,7 +737,8 @@
           <h2 class="section-title">Commissions &amp; Pricing 🧾 (ᵔᴥᵔ)</h2>
           <p class="section-subtitle">
             Base prices in <strong>USD</strong>. Final quotes may change for complexity, backgrounds,
-            multiple characters, or specific NSFW content (18+ only).
+            multiple characters, or specific NSFW content (18+ only). Furry drawings and/or drawings with 
+            another person(s) will be charged more depending on the compexity.
           </p>
 
           <div class="commission-layout">
