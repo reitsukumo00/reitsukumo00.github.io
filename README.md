@@ -667,8 +667,8 @@
           <div class="hero-art-preview">
             <div class="hero-card">
               <div class="hero-pfp">
-  <img src="images/Rei_Tsukumo_pfp_2.jpg" alt="Rei Tsukumo Icon">
-</div>
+               <img src="images/Rei_Tsukumo_pfp_2.jpg" alt="Rei Tsukumo Icon">
+              </div>
               <div class="hero-status">
               </div>
               <div class="floating-chip chip-1">✨ SFW &amp; NSFW (18+)</div>
