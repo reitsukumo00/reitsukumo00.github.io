@@ -264,7 +264,7 @@
       </div>
 
       <div class="contact-card">
-        <form action="mailto:reitsukumo00@gmail.com" method="post" enctype="text/plain">
+        <form action="mailto:rei.tsukumo00@gmail.com" method="post" enctype="text/plain">
 
           <label>Preferred Contact Method:</label>
           <select name="Preferred Contact">
