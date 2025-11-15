@@ -1,8 +1,3 @@
-h1.project-title,
-.site-header,
-.site-title {
-  display: none !important;
-}
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -671,7 +666,9 @@ h1.project-title,
 
           <div class="hero-art-preview">
             <div class="hero-card">
-              <div class="hero-pfp">玲</div>
+              <div class="hero-pfp">
+  <img src="images/yourimage.png" alt="Rei Avatar" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+</div>
               <div class="hero-status">
               </div>
               <div class="floating-chip chip-1">✨ SFW &amp; NSFW (18+)</div>
